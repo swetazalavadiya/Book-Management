@@ -53,7 +53,8 @@ const validRating=function (value){
 let Rating = /^[1-5 ]{1,1}$/
 if (Rating.test(value)) return true
 }
- const dad=(value)=>{
+
+const dad=(value)=>{
     if(value.trim().length===0) return false
     return true
  }

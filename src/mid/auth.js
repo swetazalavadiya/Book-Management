@@ -35,7 +35,7 @@ const Authrization = async (req, res, next) => {
         let bookData = await bookModel.findOne({ _id: bookId})
         if (!bookData) return res.status(404).send({ status: false, msg: "Ooh.. book is not present" })
         if (bookData.isDeleted) return res.status(400).send({ status: false, msg: "Ooh.. book Already is Deleted" })
-        if (bookData.userId != userId) { return res.status(403).send({ status: false, msg: "Oooh... you are not Authrization" }) }
+        if (bookData.userId != userId) { return res.status(403).send({ status: false, msg: "Oooh... you are not Authrized" }) }
 
         next()
 
